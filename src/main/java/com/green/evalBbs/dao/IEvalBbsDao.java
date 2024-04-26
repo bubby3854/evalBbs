@@ -1,6 +1,6 @@
 package com.green.evalBbs.dao;
 
-
+import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -13,8 +13,8 @@ import com.green.evalBbs.dto.EvalBbsDto;
 public  interface IEvalBbsDao {
 	
 	public List<EvalBbsDto> getList();
-	public EvalBbsDto getDto(@Param("bno") String bno);
-	public void write(String title, String content, String writer);
-	public void delete(@Param("bno") String bno);
+	public EvalBbsDto getDto(@Param("id") String id);
+	public void write(String writer, String title, String content);
+	public void delete(@Param("id") String id);
 
 }
