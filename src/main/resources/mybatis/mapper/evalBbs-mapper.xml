@@ -4,5 +4,23 @@
   
 <mapper namespace="com.green.evalBbs.dao.IEvalBbsDao">
 	
+	<select id="getDto" >
+		SELECT * FROM  evalbbs WHERE id = #{bno}
+	</select>
+	
+	<select id="getList" resultType="com.green.evalBbs.dto.EvalBbsDto">
+		SELECT * FROM  evalbbs
+	</select>
+	
+	<insert id="write">
+		INSERT INTO evalbbs (writer, title, content)
+		VALUES (#{param1}, #{param2}, #{param3} )
+	</insert>
+	
+	
+	<delete id="delete">
+		DELETE FROM evalbbs WHERE id = #{bno}
+		
+	</delete>
 	
 </mapper>
